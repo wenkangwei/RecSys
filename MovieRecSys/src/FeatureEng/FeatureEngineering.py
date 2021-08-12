@@ -57,7 +57,7 @@ def addMovieFea(movie_fea, rating_fea,round_num=2, use_MultiOneHot = False):
         samples = movie_fea.withColumn("movieGenre1",F.split(F.col('genres'),"\\|")[0])\
                             .withColumn("movieGenre2",F.split(F.col('genres'),"\\|")[1])\
                             .withColumn("movieGenre3",F.split(F.col('genres'),"\\|")[2])
-        samples = movie_fea
+        #samples = movie_fea
         
     
     samples = rating_fea.join(samples, on=['movieId'], how='left')
